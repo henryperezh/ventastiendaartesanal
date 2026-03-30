@@ -14,7 +14,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .header p { color: #C5E8B0; font-size: 14px; margin-bottom: 3px; }
 .header .hashtag { color: #fff; font-size: 14px; font-weight: 700; opacity: 0.9; }
 .header-logo { width: 62px; height: 62px; object-fit: contain; background: #fff; border-radius: 8px; padding: 4px; flex-shrink: 0; }
-.fecha-bar { background: #7B4F9E; padding: 8px 16px; text-align: center; font-size: 12px; color: #C5E8B0; }
+.fecha-bar { background: #7B4F9E; padding: 10px 16px; text-align: center; font-size: 14px; font-weight: 600; color: #C5E8B0; letter-spacing: 0.3px; border-bottom: 2px solid #5a3577; min-height: 40px; display: flex; align-items: center; justify-content: center; gap: 8px; }
 .section { padding: 16px; border-bottom: 0.5px solid #eee; }
 .section-title { font-size: 13px; font-weight: 600; color: #7B4F9E; margin-bottom: 10px; }
 .inp { width: 100%; border: 1.5px solid #ddd; border-radius: 10px; padding: 9px 12px; font-size: 14px; color: #222; font-family: inherit; outline: none; margin-bottom: 10px; background: #fff; }
@@ -88,15 +88,21 @@ select.inp { appearance: none; background-image: url("data:image/svg+xml,%3Csvg 
     <div class="section">
       <div id="inp-fecha-display" style="background:#F3FAF0; border:1.5px solid #C5E8B0; border-radius:10px; padding:9px 12px; font-size:14px; color:#7B4F9E; font-weight:600; margin-bottom:10px;"></div>
 
-      <div class="section-title">👤 Vendedor responsable</div>
-      <select id="inp-artesano" class="inp">
-        <option value="">— Selecciona el vendedor —</option>
-        <option value="Henry">Henry</option>
-        <option value="Andrés">Andrés</option>
-        <option value="Viviana">Viviana</option>
-        <option value="Amparo">Amparo</option>
-        <option value="Ingrid">Ingrid</option>
-      </select>
+   <div class="section-title">👤 Artesan@ responsable</div>
+
+<select class="inp" id="inp-artesano">
+  <option value="">Seleccionar artesan@</option>
+  <option>AMPARO GOMEZ</option>
+  <option>NORALBA CHINGÜE</option>
+  <option>GLORIA STELLA SANCHEZ</option>
+  <option>RAUL HERNAN ORTIZ</option>
+  <option>ALEJANDRA IZQUIERDO</option>
+  <option>VIVIANA SOLANO</option>
+  <option>ANDRES DAZA</option>
+  <option>BETY PERDOMO</option>
+  <option>INGRID MURCIA</option>
+  <option>LUZ HELENA CHILITO</option>
+</select>
 
       <button class="btn btn-green" onclick="iniciarDia()">▶ Iniciar registro del día</button>
     </div>
@@ -120,14 +126,21 @@ select.inp { appearance: none; background-image: url("data:image/svg+xml,%3Csvg 
       <div class="section-title">🛒 Nueva venta</div>
       <input type="text" id="inp-producto" class="inp" placeholder="Nombre del producto">
 
-      <div class="section-title" style="margin-top:0; margin-bottom:8px;">🏺 Emprendimiento fabricante</div>
+      <div class="section-title" style="margin-top:0; margin-bottom:8px;">🏺 Artesan@ fabricante</div>
       <select id="inp-fabricante" class="inp">
-        <option value="">— Selecciona el emprendimiento —</option>
-        <option value="Arte Barranquero">Arte Barranquero</option>
-        <option value="Alcaldía de Vijes">Alcaldía de Vijes</option>
-        <option value="Splendor">Splendor</option>
-        <option value="Aletia">Aletia</option>
-      </select>
+  <option value="">Selecciona artesan@ fabricante</option>
+
+  <option value="Yogurth de Soya">Yogurth de Soya</option>
+  <option value="Un Sueño en Crochet">Un Sueño en Crochet</option>
+  <option value="Splendor">Splendor</option>
+  <option value="Tejarte">Tejarte</option>
+  <option value="Aletia Creaciones">Aletia Creaciones</option>
+  <option value="Arte Barranquero">Arte Barranquero</option>
+  <option value="Creaciones Tica">Creaciones Tica</option>
+  <option value="Artop">Artop</option>
+  <option value="Variedades y Artesanias Vijes">Variedades y Artesanias Vijes</option>
+
+</select>
 
       <div class="row2">
         <input type="number" id="inp-cantidad" class="inp" placeholder="Cant." min="1" value="1" style="max-width:90px;">
@@ -152,10 +165,11 @@ select.inp { appearance: none; background-image: url("data:image/svg+xml,%3Csvg 
         <span class="total-lbl">💰 Total del día</span>
         <span class="total-val" id="total-dia">$0</span>
       </div>
-      <div style="background:#FFF8E1; border:1.5px solid #FFD54F; border-radius:10px; padding:10px 12px; margin-bottom:8px; font-size:12px; color:#795548;">
-        ⚠️ <strong>Nota:</strong> El informe debe generarse <strong>únicamente al final de la jornada</strong>. Al generarlo se guardarán automáticamente todos los datos del día en el sistema.
-      </div>
+     
       <button class="btn btn-dark" onclick="generarInforme()">📊 Generar informe del día</button>
+<div style="background:#FFF3CD; color:#856404; border:1.5px solid #FFE69C; border-radius:10px; padding:12px; font-size:16px; font-weight:600; margin-top:12px; margin-bottom:6px;">
+  ⚠️ Nota: El informe debe generarse únicamente al finalizar la jornada. Al generarlo, se guardarán automáticamente todos los datos del día en el sistema.
+</div>
     </div>
   </div>
 </div>
@@ -218,7 +232,7 @@ select.inp { appearance: none; background-image: url("data:image/svg+xml,%3Csvg 
       </div>
 
       <div class="report-block">
-        <div class="report-title">🏺 Por emprendimiento</div>
+        <div class="report-title">🏺 Por artesan@ fabricante</div>
         <div id="inf-emprendimientos"></div>
       </div>
     </div>
@@ -317,7 +331,7 @@ function mostrarPantallaVentas() {
   document.getElementById('pantalla-inicio').style.display = 'none';
   document.getElementById('pantalla-informe').style.display = 'none';
   document.getElementById('pantalla-ventas').style.display = 'block';
-  document.getElementById('bar-fecha-vendedor').textContent = '📅 ' + fechaLegible(fecha) + '  ·  👤 ' + artesano;
+  document.getElementById('bar-fecha-vendedor').innerHTML = '<span>📅 ' + fechaLegible(fecha) + '</span><span style="opacity:0.5">|</span><span>👤 Vendedor/a: <strong>' + artesano + '</strong></span>';
   renderVentas();
   window.scrollTo(0,0);
 }
@@ -330,7 +344,7 @@ function agregarVenta() {
   var pago = document.getElementById('inp-pago').value;
 
   if (!prod) { mostrarToast('⚠️ Escribe el nombre del producto'); return; }
-  if (!fab)  { mostrarToast('⚠️ Selecciona el emprendimiento fabricante'); return; }
+  if (!fab)  { mostrarToast('⚠️ Selecciona artesan@ fabricante'); return; }
   if (cant < 1) { mostrarToast('⚠️ La cantidad debe ser al menos 1'); return; }
   if (prec <= 0) { mostrarToast('⚠️ Ingresa un precio válido'); return; }
 
@@ -365,10 +379,10 @@ function renderVentas() {
   document.getElementById('num-ventas').textContent = ventas.length;
   document.getElementById('total-dia').textContent = formatPesos(total);
 
-  if (ventas.length === 0) {
-    lista.innerHTML = '<p class="empty-msg">Aún no hay ventas registradas</p>';
-    return;
-  }
+ if (ventas.length === 0) {
+  lista.innerHTML = '<p class="empty-msg">Aún no hay ventas registradas</p>';
+  return;
+}
 
   lista.innerHTML = ventas.map(function(v) {
     return '<div class="venta-item">' +
@@ -384,11 +398,15 @@ function renderVentas() {
 }
 
 function generarInforme() {
-  if (ventas.length === 0) { mostrarToast('⚠️ No hay ventas para generar el informe'); return; }
+
+  if (ventas.length === 0) {
+    mostrarToast('⚠️ No hay ventas registradas. Se generará el informe en cero.');
+  }
+
   document.getElementById('inp-visitantes').value = '';
   document.getElementById('modal-visitantes').classList.add('visible');
-}
 
+}
 function confirmarVisitantes() {
   var vis = parseInt(document.getElementById('inp-visitantes').value) || 0;
   var enc = parseInt(document.getElementById('inp-encuestas').value) || 0;
@@ -399,9 +417,12 @@ function confirmarVisitantes() {
 }
 
 function generarInformeReal() {
-  if (ventas.length === 0) { mostrarToast('⚠️ No hay ventas para generar el informe'); return; }
 
-  var total    = ventas.reduce(function(s,v){ return s+v.total; }, 0);
+  if (ventas.length === 0) {
+    mostrarToast("⚠️ No hay ventas. El informe se generará en cero.");
+  }
+
+  var total = ventas.reduce(function(s,v){ return s+v.total; }, 0);
   var unidades = ventas.reduce(function(s,v){ return s+v.cantidad; }, 0);
 
   document.getElementById('inf-fecha').textContent = '📅 ' + fechaLegible(fecha);
